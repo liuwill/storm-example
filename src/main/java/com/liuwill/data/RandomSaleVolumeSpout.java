@@ -28,7 +28,7 @@ public class RandomSaleVolumeSpout extends BaseRichSpout {
     private static final DateTimeFormatter isoFormat = ISODateTimeFormat.dateTimeNoMillis();
 
     private  SpoutOutputCollector collector;
-    private int orderId = 10000;
+    private int skuId = 10000;
 
     @Override
     public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
@@ -38,9 +38,9 @@ public class RandomSaleVolumeSpout extends BaseRichSpout {
     @Override
     public void nextTuple() {
         Utils.sleep(rand.nextInt(100));
-        ++orderId;
+        ++skuId;
 
-        String line = isoFormat.print(DateTime.now()) + " " + orderId + " " + rand.nextInt(10000) + " " + "dummyusername";
+        String line = isoFormat.print(DateTime.now()) + " " + skuId + " " + rand.nextInt(10000) + " " + "dummyusername";
         collector.emit(new Values(line));
     }
 

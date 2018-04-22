@@ -14,7 +14,7 @@ public class SaleOrder {
     private String username;
     private String skuId;
     private String orderId;
-    private String timestamp;
+    private Long timestamp;
 
     public String getUsername() {
         return username;
@@ -40,11 +40,11 @@ public class SaleOrder {
         this.orderId = orderId;
     }
 
-    public String getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -52,7 +52,7 @@ public class SaleOrder {
         SaleOrder saleOrder = new SaleOrder();
         String[] tupleData = tuple.split(" ");
 
-        saleOrder.setTimestamp(tupleData[0]);
+        saleOrder.setTimestamp(Long.getLong(tupleData[0]));
         saleOrder.setOrderId(tupleData[0]);
         saleOrder.setSkuId(tupleData[0]);
         saleOrder.setUsername(tupleData[0]);

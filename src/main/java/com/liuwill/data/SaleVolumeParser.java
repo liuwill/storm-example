@@ -29,7 +29,7 @@ public class SaleVolumeParser extends BaseRichBolt {
     @Override
     public void execute(Tuple input) {
         SaleOrder saleOrder = SaleOrder.buildSaleOrder(input.getString(0));
-        collector.emit(new Values(saleOrder.getTimestamp(), saleOrder.getOrderId(), saleOrder.getSkuId(), saleOrder.getUsername()));
+        collector.emit(new Values(saleOrder.getTimestamp(), saleOrder.getSkuId(), saleOrder.getOrderId(), saleOrder.getUsername()));
     }
 
     @Override
