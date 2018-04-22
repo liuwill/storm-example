@@ -11,7 +11,13 @@
 # 3 进入镜像环境
 docker exec -it storm-example /bin/bash
 
-# 4 安装storm环境
+# 4 安装java和python环境
+./script/install_env.sh
+
+# 5 安装storm环境
 ./script/install_storm.sh
+
+# 6 运行storm任务
+./script/run_task.sh
 
 ```
